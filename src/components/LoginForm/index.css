@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Grey+Qo&family=Playwrite+PL:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 90%;
+  max-width: 1110px;
+  margin: auto;
+}
+
+@media screen and (min-width: 992px) {
+  .login-form-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+.login-website-logo-mobile-image {
+  width: 165px;
+  margin-top: 50px;
+  margin-bottom: 35px;
+}
+
+@media screen and (min-width: 992px) {
+  .login-website-logo-mobile-image {
+    display: none;
+  }
+}
+
+.login-image {
+  width: 278px;
+}
+
+@media screen and (min-width: 992px) {
+  .login-image {
+    width: 60%;
+    max-width: 524px;
+    flex-shrink: 1;
+    margin-right: 20px;
+  }
+}
+
+.login-website-logo-desktop-image {
+  width: 185px;
+}
+
+@media screen and (max-width: 991px) {
+  .login-website-logo-desktop-image {
+    display: none;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+}
+
+@media screen and (min-width: 992px) {
+  .form-container {
+    width: 400px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: linear-gradient(315deg, #ffffff, #e6e6e6);
+    box-shadow: -35px -35px 70px #666666, 35px 35px 70px #ffffff;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.input-label {
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #475569;
+}
+
+.username-input-field {
+  font-size: 14px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #d7dfe9;
+  background-color: #e2e8f0;
+  color: #64748b;
+  border-radius: 2px;
+  margin-top: 5px;
+  outline: none;
+  padding: 8px 16px 8px 16px;
+}
+
+.error-message {
+  align-self: center;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 16px;
+  color: #ff0b37;
+}
+.btn-container {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+.btn {
+  margin-top: 4px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #529df2;
+  font-size: 20px;
+}
+.text {
+  font-family: 'roboto';
+  font-size: 12px;
+}
+
+/*button */
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cta:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #015ebc;
+  width: 0px;
+  height: 45px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.cta span {
+  position: relative;
+  font-family: 'Poppins';
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #0654d1;
+}
+
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #041527;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 1s ease;
+}
+
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}

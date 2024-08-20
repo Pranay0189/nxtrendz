@@ -1,0 +1,206 @@
+.nav-header {
+  display: flex;
+  justify-content: center;
+  background-origin: 1px solid rgba(243, 243, 243);
+  background: linear-gradient(145deg, #ffffff, #e6e1e1);
+  box-shadow: 20px 20px 60px #d9d5d5, -20px -20px 60px #ffffff;
+}
+@media screen and (max-width: 767px) {
+  .nav-header {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1110px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.website-logo {
+  width: 100px;
+}
+@media screen and (min-width: 768px) {
+  .website-logo {
+    width: 150px;
+  }
+}
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-self: flex-end;
+  list-style: none;
+  flex: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    display: none;
+  }
+}
+.nav-link {
+  text-decoration: none;
+  font-family: 'roboto';
+  font-size: 16px;
+  color: #475569;
+  font-weight: 400;
+  margin: 10px;
+  position: relative;
+  -ms-text-combine-horizontal: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #9e7735;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #9e7735;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.logout-desktop-btn {
+  margin-left: 12px;
+  display: inline-block;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+  padding: 0.7em 1.7em;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.logout-desktop-btn:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c48686, inset -4px -4px 12px #ffffff;
+}
+
+.logout-desktop-btn:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateY(-50%) scaleY(1) scaleX(1.25);
+  top: 100%;
+  width: 140%;
+  height: 180%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: block;
+  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+}
+
+.logout-desktop-btn:after {
+  content: '';
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%) scaleX(1) scaleY(1.45);
+  top: 180%;
+  width: 160%;
+  height: 190%;
+  background-color: #c5c5c5;
+  border-radius: 50%;
+  display: block;
+  transition: all 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -1;
+  -webkit-transition: all 0.7s 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: all 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  -ms-transition: all 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  -o-transition: all 1s 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.logout-desktop-btn:hover {
+  color: black;
+  border: 1px solid #c5c5c5;
+}
+
+.logout-desktop-btn:hover:before {
+  top: -35%;
+  background-color: #c5c5c5;
+  transform: translateX(-50%) scaleX(1.3) scaleY(0.8);
+}
+
+.logout-desktop-btn:hover:after {
+  top: -45%;
+  background-color: #c5c5c5;
+  transform: translateX(-50%) scaleX(1.3) scaleY(0.8);
+}
+
+@media screen and (max-width: 767px) {
+  .logout-desktop-btn {
+    display: none;
+  }
+}
+.logout-mobile-btn {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+@media screen and (min-width: 768px) {
+  .logout-mobile-btn {
+    display: none;
+  }
+}
+.logout-icon {
+  color: grey;
+  width: 30px;
+  height: 20px;
+}
+.nav-menu-mobile {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .nav-menu-mobile {
+    display: none;
+  }
+}
+.nav-menu-list-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  flex: 1;
+  padding: 0;
+  background-color: #e6f6ff;
+  list-style: none;
+  margin-top: 0px;
+}
+.nav-bar-image {
+  width: 30px;
+  height: 20px;
+  color: grey;
+}
+.nav-bar-image:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: ease-in-out 0.5s;
+}
+.logout-icon:hover {
+  color: black;
+  transform: scale(1.2);
+  transition: ease-in-out 0.5s;
+}

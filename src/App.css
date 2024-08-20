@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(145deg, #c5ffff, #a6e0df);
+  scroll-behavior: smooth;
+  box-shadow: 20px 20px 60px #9cd4d3, -20px -20px 60px #d4ffff;
+}
