@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage ("clone code") {
             steps {
-                git branch: "main", url:"https://github.com/Pranay0189/nxtrendz.git"
+                git branch: "master", url:"https://github.com/Pranay0189/nxtrendz.git"
             }
         }
 
