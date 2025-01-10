@@ -1,23 +1,20 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine AS build
 
 WORKDIR /nxtrendz-app
 
-COPY package.json .
+COPY package*.json /.
 
 RUN npm install
 
-COPY . .
+ADD . .
 
-RUN npm rum build
+#Stage-2 Run the Application
+FROM node:16-slim AS runtime
 
-#Stage 2
+WORKDIR /nxtrendz-app
 
-FROM nginx:alpine
+COPY --from=build /nxtrendz-app /nxtrendz-app
 
-RUN rm -rf /usr/share/nginx/html/*
+EXPOSE 3000 
 
-COPY --from=builder /nxtrendz-app/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "npm", "run", "dev"]
