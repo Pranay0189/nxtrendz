@@ -1,14 +1,26 @@
-FROM node:16
+FROM node:18 AS build
 
-WORKDIR /main-app 
+WORKDIR /main-app
 
-COPY package*.json ./
+COPY package*.json /main-app/
 
 RUN npm install
 
-COPY . . 
+COPY . /main-app/
+
+RUN npm run build 
+
+
+#Stage -2
+
+FROM node:18-alpine
+
+WORKDIR /main-app
+
+RUN npm install -g serve
+
+COPY --from=build /main-app/dist /main-app/dist
 
 EXPOSE 3000
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
-
+CMD ["serve", "-s", "dist", "-l", "3000"] 
