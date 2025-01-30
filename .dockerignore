@@ -1,0 +1,6 @@
+.git/
+Dockerfile
+metadata.json
+favicon.ico
+robots.txt
+.gitignore
