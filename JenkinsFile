@@ -1,0 +1,60 @@
+pipeline {
+    environment {
+        scannerHome = tool "SonarScanner"
+    }
+    
+    agent any
+    
+    tools {
+        nodejs "NODEJS"
+    }
+    
+    stages {
+        stage ("clone") {
+            steps {
+                git branch: "master", url:"https://github.com/Pranay0189/nxtrendz.git"
+            }
+        }
+        
+        stage ("Install Dependencies") {
+            steps {
+                sh "npm install"
+            }
+        }
+        
+        stage ("code analysis") {
+            steps {
+                withSonarQubeEnv("SonarQube") {
+                    sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=nxtrendz-app \
+                    -Dsonar.projectName=nztrendz-app \
+                    -Dsonar.sources=src/ \
+                    '''
+                }
+            }
+        
+        }
+        
+         stage ("docker login") {
+            steps {
+                withCredentials([usernamePassword(credentialsId: "dockerCredentials", usernameVariable: "DOCKER_USER", passwordVariable: "DOCKER_PASS")]) {
+                    sh '''
+                        echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+                    '''
+                }
+            }
+        }
+        
+        stage ("image build") {
+            steps {
+                sh 'docker build -t tony878/nxtrendz:${BUILD_NUMBER} .'
+            }
+        }
+        stage ("push image") {
+            steps {
+                sh "docker push tony878/nxtrendz:${BUILD_NUMBER}"
+                sh "docker images"
+            }
+        }
+    }
+    
+}
