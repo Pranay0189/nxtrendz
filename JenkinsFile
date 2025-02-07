@@ -46,12 +46,12 @@ pipeline {
         
         stage ("image build") {
             steps {
-                sh 'docker build -t tony878/nxtrendz:${BUILD_NUMBER} .'
+                sh 'docker build -t pranay801/nxtrendz:${BUILD_NUMBER} .'
             }
         }
         stage ("push image") {
             steps {
-                sh "docker push tony878/nxtrendz:${BUILD_NUMBER}"
+                sh "docker push pranay801/nxtrendz:${BUILD_NUMBER}"
                 sh "docker images"
             }
         }
